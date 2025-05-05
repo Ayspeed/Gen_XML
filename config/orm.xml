@@ -1,0 +1,28 @@
+<orm>
+    <classes>
+        <class name="client">
+            <id name="cu_id" />
+            <field name="cu_nom" type="varchar" size="30" desc="nom du client" />
+            <field name="cu_prenom" type="varchar" size="30" desc="prénom du client" />
+        </class>
+        
+        <class name="command">
+            <id name="co_id" />
+            <field name="co_date" type="date" />
+            <field name="co_prix" type="float" />
+        </class>
+        
+        <class name="produit">
+            <id name="pr_id" />
+            <field name="pr_label" type="varchar" size="50" />
+            <field name="pr_prix_unitaire" type="float" />
+        </class>
+    </classes>
+    
+    <relationships>
+        <relation type="one-to-one" from="command" to="client" name="co_cu_id" />
+        <relation type="one-to-many" from="command" to="produit">
+            <field name="quantite" type="float" />
+        </relation>
+    </relationships>
+</orm>

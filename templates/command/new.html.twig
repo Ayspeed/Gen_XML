@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title %}Créer un command{% endblock %}
+
+{% block body %}
+<h1>Nouvel(le) command</h1>
+{{ form_start(form) }}
+  {{ form_widget(form) }}
+  <button class="btn">Enregistrer</button>
+{{ form_end(form) }}
+{% endblock %}
